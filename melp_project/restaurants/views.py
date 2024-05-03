@@ -8,15 +8,21 @@ from django.contrib.gis.geos import Point
 from .models import Restaurant
 from .serializers import RestaurantSerializer
 
+# TASK 1
+
+# Script to update csv file must be runned from console with "python manage.py runscript import_data"
+
+# Resolves GET(ALL) and POST from Restaurants
 class RestaurantListCreate(generics.ListCreateAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 
+# Resolves GET, PULL and DELETE from each Restaurants instance
 class RestaurantRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer   
         
-
+# TASK 2
 
 # Calculate statistics for restaurants within a specific radius
 def restaurant_statistics(request):
@@ -47,6 +53,7 @@ def restaurant_statistics(request):
         point__distance_lte=(center_point, max_distance)
     )
 
+    # Calculate Count, Avg and StDev from filtered restaurantes
     statistics = restaurants_within_radius.aggregate(
         count=Count('id'),
         avg_rating=Avg('rating'),
