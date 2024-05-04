@@ -12,6 +12,28 @@ The MELP API is a RESTful API designed to provide information about restaurants 
 
 To install the MELP API, follow these steps:
 
+### Using Docker
+
+To run this project locally, you'll need to have Docker installed on your machine. Follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Build the Docker image by running the following command:
+
+```
+docker build -t api_melp .
+```
+
+4. Once the image is built successfully, you can run the container with the following command:
+
+```
+docker run -p 8000:8000 image_name
+```
+
+This will start the server, and you can access the application from your web browser at http://localhost:8000.
+
+### Without Docker
+
 1. Clone the repository to your local machine.
 2. Install the required dependencies using `pip install -r requirements.txt`.
 3. Configure your database settings in `settings.py`.
