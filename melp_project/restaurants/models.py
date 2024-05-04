@@ -13,10 +13,10 @@ class Restaurant(models.Model):
     state = models.TextField()
     lat = models.FloatField()
     lng = models.FloatField()
-    point = models.PointField(null=True, blank=True)  # Campo PointField para almacenar la ubicación como un punto
+    point = models.PointField(null=True, blank=True) # Field to store location as a point
 
     def save(self, *args, **kwargs):
-        # Crear un objeto Point basado en latitud y longitud
+        # Create a Point object based on latitude and longitude
         if self.lat is not None and self.lng is not None:
             self.point = Point(self.lng, self.lat)
         super().save(*args, **kwargs)
