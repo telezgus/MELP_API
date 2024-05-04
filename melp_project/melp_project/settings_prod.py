@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,16 +78,9 @@ WSGI_APPLICATION = 'melp_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Usa el backend de PostGIS
-        'NAME': 'restaurants_db',
-        'USER': 'gustavo', # Usuario por defecto de PostgreSQL
-        'PASSWORD': 'telez',
-        'HOST': 'localhost', # Host donde se ejecuta PostgreSQL
-        'PORT': '5432', # Puerto por defecto de PostgreSQL
-    }
-}
+    'default': dj_database_url.config(default='postgres://gustavo:R5EDHNU2izbS0wIJELLArT8eWWiB6hZm@dpg-coqn4v7sc6pc73dd7u6g-a/restaurants_db_6yjl', conn_max_age=600)}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -128,5 +122,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
 
 
