@@ -1,19 +1,19 @@
-# Usa una imagen base de Python (o cualquier otra imagen base que necesites)
+# Use a base Python image 
 FROM python:3.11
 
-# Instala los paquetes necesarios
+# Install necessary packages
 RUN apt-get update && \
     apt-get install -y binutils libproj-dev gdal-bin && \
     rm -rf /var/lib/apt/lists/*
 
-# Copia tu aplicación y archivos necesarios
+# Copy application and necessary files
 COPY . /app
 
-# Establece el directorio de trabajo
+# Set the working directory
 WORKDIR /app
 
-# Instala las dependencias de Python
+# Install Python dependencies
 RUN pip install -r requirements.txt
 
-# Ejecuta tu aplicación
+# Run application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
