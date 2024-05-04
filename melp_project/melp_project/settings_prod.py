@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-27zi7wxd1(q$(+(&xd7)8xr-avvduo9ow%uub38gbq-)_mu&vc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['melp-api-4kdf.onrender.com']
 
 
 # Application definition
