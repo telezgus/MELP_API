@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'melp_project.wsgi.application'
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': dj_database_url.config( default='postgis://gustavo:R5EDHNU2izbS0wIJELLArT8eWWiB6hZm@dpg-coqn4v7sc6pc73dd7u6g-a.oregon-postgres.render.com/restaurants_db_6yjl',        conn_max_age=600    )}
+    'default': dj_database_url.config( default='postgis://gustavo:R5EDHNU2izbS0wIJELLArT8eWWiB6hZm@dpg-coqn4v7sc6pc73dd7u6g-a/restaurants_db_6yjl',        conn_max_age=600    )}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -124,4 +124,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-GDAL_LIBRARY_PATH = 'C:\\OSGeo4W\\bin\\gdal308.dll'
