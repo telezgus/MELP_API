@@ -81,7 +81,7 @@ For more examples and details, please refer to the [API documentation](api_docum
 
 ## Configuration
 
-The MELP API can be configured using environment variables. Refer to `settings.py` for available configuration options.
+Refer to `settings_pord.py` for available configuration options.
 
 ## Importing Data
 
